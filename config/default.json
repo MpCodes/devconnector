@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://abuuabdul:eMQX4GDimboK5nw9@devconnector.ud1ol.mongodb.net/test?retryWrites=true&w=majority"
+    "mongoURI": "mongodb://abuuabdul:eMQX4GDimboK5nw9@devconnector-shard-00-00.ud1ol.azure.mongodb.net:27017,devconnector-shard-00-01.ud1ol.azure.mongodb.net:27017,devconnector-shard-00-02.ud1ol.azure.mongodb.net:27017/devdb?ssl=true&replicaSet=atlas-mcmlkk-shard-0&authSource=admin&retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
 }
