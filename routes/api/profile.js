@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
-const { check, validationResult } = require("express-validator");
+const {
+  check,
+  validationResult
+} = require("express-validator");
 
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
@@ -85,21 +88,25 @@ router.post(
     if (instagram) profileFields.social.instagram = instagram;
 
     try {
-      let profile = await Profile.findOne({ user: req.user.id });
+      let profile = await Profile.findOne({
+        user: req.user.id
+      });
 
       if (profile) {
-        profile = await Profile.findOneAndUpdate(
-          { user: req.user.id },
-          { $set: profileFields },
-          { new: true }
-        );
+        profile = await Profile.findOneAndUpdate({
+          user: req.user.id
+        }, {
+          $set: profileFields
+        }, {
+          new: true
+        });
         return res.json(profile);
       }
 
       // Create
       profile = new Profile(profileFields);
 
-      await Profile.save();
+      await profile.save();
 
       return res.json(profile);
     } catch (error) {
